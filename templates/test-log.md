@@ -2,10 +2,11 @@
 
 **Date:** YYYY-MM-DD
 **Status:** planned | pass | fail | void
+**Checks:** R1, R2
 
 ## Objective
 
-What the test shows, and which requirement it checks.
+What the test shows. The Checks line names the requirements from GOAL.md it verifies.
 
 ## Pass criteria
 

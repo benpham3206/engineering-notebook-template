@@ -51,3 +51,9 @@ bom = [("geared DC motor", 1, 6.50), ("motor driver board", 1, 2.40),
 per_unit = sum(q * c for _, q, c in bom)
 print("BOM")
 print(f"  parts cost per enclosure {per_unit:.2f} USD, both {per_unit*units:.2f} USD")
+
+# T003 travel time, mounted, five opens per side, stopwatch
+travel_s = {"left": [14.9, 14.8, 15.0, 14.8, 14.9], "right": [15.4, 15.3, 15.5, 15.4, 15.3]}
+print("T003 travel time")
+for side, ts in travel_s.items():
+    print(f"  {side:5} mean {st.mean(ts):.2f} s, max {max(ts):.1f} s, margin to 20 s {20 - max(ts):.1f} s")

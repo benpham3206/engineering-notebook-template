@@ -12,11 +12,11 @@ Open the bedroom curtains in the morning and close them at night, with no one to
 
 ## Definition of done
 
-- Each panel travels its full 0.60 m in 20 s or less.
-- Both panels open at 07:00 and close at 21:00 local time, each within 1 min, on every day of a 14-day test that includes a clock change.
-- A move stops at the end switch, or after 25 s if a switch fails, with no stall held longer than that.
-- A push button on each enclosure opens or closes that panel by hand.
-- The cord loop stays tensioned and fixed to the wall, out of reach of children.
+- R1: Each panel travels its full 0.60 m in 20 s or less.
+- R2: Both panels open at 07:00 and close at 21:00 local time, each within 1 min, on every day of a 14-day test that includes a clock change.
+- R3: A move stops at the end switch, or after 25 s if a switch fails, and the motor stays off whenever the board resets.
+- R4: A push button on each enclosure opens or closes that panel by hand.
+- R5: The cord loop stays tensioned and fixed to the wall, out of reach of children.
 
 ## Constraints
 

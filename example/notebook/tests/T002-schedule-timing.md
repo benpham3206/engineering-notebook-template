@@ -1,7 +1,8 @@
 # T002: Schedule timing
 
-**Date:** 2025-10-26
+**Date:** 2025-10-28
 **Status:** fail
+**Checks:** R2
 
 ## Objective
 
@@ -15,7 +16,7 @@ Every logged start time within 1 min of the scheduled local time, on both enclos
 
 - Both enclosures installed, firmware with the schedule set to 07:00 and 21:00.
 - Each board logs the UTC time of every move start over Wi-Fi to a laptop.
-- Test ran from 2025-10-26 to 2025-11-08. The local clocks went back one hour on 2025-11-02.
+- Test ran from 2025-10-28 to 2025-11-10. The local clocks went back one hour on 2025-11-02.
 
 ## Procedure
 
@@ -27,9 +28,9 @@ Every logged start time within 1 min of the scheduled local time, on both enclos
 
 | Dates | Largest error, either enclosure | Largest left to right gap | Notes |
 |---|---|---|---|
-| 2025-10-26 to 2025-11-01 | 2 s | 1 s | |
+| 2025-10-28 to 2025-11-01 | 2 s | 1 s | |
 | 2025-11-02 | ~~2 s~~ 60 min | 1 s | 2025-11-02: opened at 06:00 local. Firmware stored the schedule as a fixed offset from UTC, so it ignored the clock change. Recorded as 2 s at first by reading the log in UTC. |
-| 2025-11-03 to 2025-11-08 | 2 s | 1 s | after the fix below |
+| 2025-11-03 to 2025-11-10 | 2 s | 1 s | after the fix below |
 
 Log files: `data/T002-schedule-timing-left.csv` and `data/T002-schedule-timing-right.csv`.
 
@@ -37,7 +38,7 @@ Log files: `data/T002-schedule-timing-left.csv` and `data/T002-schedule-timing-r
 
 The 60 min error on 2025-11-02 failed the criteria. The firmware was changed on 2025-11-02 to store the schedule as local time with the time zone name, and to convert to UTC each day. After the change, every start was within 2 s, and the panels started within 1 s of each other.
 
-The fix was also checked on the bench by setting a board's clock to one hour before the spring clock change: it opened at 07:00 local on both sides of the change. The test still fails, because one of the 14 days missed. A full retest across the next real clock change is planned as T003.
+The fix was also checked on the bench by setting a board's clock to one hour before the spring clock change: it opened at 07:00 local on both sides of the change. The test still fails, because one of the 14 days missed. A full retest across the next real clock change is planned as [T004](T004-schedule-retest.md).
 
 ## Notes
 

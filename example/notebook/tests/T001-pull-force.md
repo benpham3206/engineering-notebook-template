@@ -2,6 +2,7 @@
 
 **Date:** 2025-10-20
 **Status:** pass
+**Checks:** none; this test is the input to motor sizing
 
 ## Objective
 
