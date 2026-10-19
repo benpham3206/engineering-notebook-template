@@ -9,7 +9,7 @@ A worked example of this template. Two small enclosures, one at the top of each 
 | [notebook/entries/](notebook/entries/) | [Sizing](notebook/entries/2025-10-20-pull-force-and-motor-sizing.md) and [first build and power](notebook/entries/2025-10-27-first-build-and-power.md) |
 | [notebook/decisions/](notebook/decisions/) | [Two independent enclosures](notebook/decisions/D001-two-independent-enclosures.md) |
 | [notebook/tests/](notebook/tests/) | [Pull force](notebook/tests/T001-pull-force.md) and [schedule timing](notebook/tests/T002-schedule-timing.md) |
-| [notebook/meetings/](notebook/meetings/) | [Design review](notebook/meetings/2025-10-23-design-review.md) |
+| [BOM.md](BOM.md) | Parts for both enclosures, with costs and revisions |
 | [calc/curtain.py](calc/curtain.py) | The script that computes every number in the notebook |
 
 The readings are example values, chosen for illustration. Do not reuse them as data for your own curtains. The raw data files the tests name are not included.

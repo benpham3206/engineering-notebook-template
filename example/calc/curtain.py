@@ -39,3 +39,15 @@ E_idle = V * I_idle * 86400
 print("Entry 2025-10-27 current, per enclosure")
 print(f"  E_move {E_move:.0f} J/day, E_idle {E_idle:.0f} J/day, idle share {E_idle/(E_idle+E_move)*100:.1f} %")
 print(f"  charge per 30 days {(I_idle*86400 + I_run*t_move*moves)*30/3600:.1f} A h")
+
+# BOM costs: (item, qty per enclosure, unit cost in USD); 2 enclosures
+units = 2
+bom = [("geared DC motor", 1, 6.50), ("motor driver board", 1, 2.40),
+       ("Wi-Fi microcontroller board", 1, 4.80), ("end switch", 2, 0.45),
+       ("push button", 1, 0.30), ("USB-C socket board", 1, 0.90),
+       ("5 V 1 A USB adapter", 1, 4.00), ("braided cord, 1.4 m", 1, 0.70),
+       ("spring idler", 1, 1.20), ("printed enclosure and pulleys", 1, 1.80),
+       ("screws and wall plugs", 1, 0.60)]
+per_unit = sum(q * c for _, q, c in bom)
+print("BOM")
+print(f"  parts cost per enclosure {per_unit:.2f} USD, both {per_unit*units:.2f} USD")

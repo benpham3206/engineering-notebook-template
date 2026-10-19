@@ -22,9 +22,10 @@ KINDS = {
     "tests": ("test-log.md", r"T\d{3}-[a-z0-9-]+\.md",
               ["Objective", "Pass criteria", "Setup", "Procedure", "Data",
                "Results", "Notes"]),
-    "meetings": ("meeting.md", rf"{DATE}-[a-z0-9-]+\.md",
-                 ["Attendees", "Agenda", "Notes", "Decisions", "Actions"]),
 }
+
+# one bill of materials per project, at the project root
+BOM = ("bom.md", ["Parts", "Totals", "Notes", "Changes"])
 
 
 def check(path, headings, is_template):
@@ -57,6 +58,18 @@ def main():
             for p in problems:
                 print(f"{path.relative_to(ROOT).as_posix()}: {p}")
             failures += bool(problems)
+    template, headings = BOM
+    files = [(ROOT / "templates" / template, True)]
+    files += [(ROOT / n / ".." / "BOM.md", False) for n in NOTEBOOKS]
+    for path, is_template in files:
+        path = path.resolve()
+        if not path.exists():
+            continue
+        checked += 1
+        problems = check(path, headings, is_template)
+        for p in problems:
+            print(f"{path.relative_to(ROOT).as_posix()}: {p}")
+        failures += bool(problems)
     print(f"{checked} files checked, {failures} with problems")
     return 1 if failures else 0
 

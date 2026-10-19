@@ -12,7 +12,7 @@ These are the rules for anyone, person or agent, who adds to this notebook.
 | `notebook/entries/` | One entry per work session |
 | `notebook/decisions/` | One record per significant choice |
 | `notebook/tests/` | One log per test |
-| `notebook/meetings/` | Notes from meetings and reviews |
+| `BOM.md` | The bill of materials, if the project has one. Revise it in place and log each revision in its Changes table |
 | `templates/` | The blank templates for each notebook folder |
 | `example/` | A filled-in example project: a two-enclosure curtain bot. Delete it in a real project |
 | `CONVENTIONS.md` | Units, significant figures, uncertainty, corrections, citations |
